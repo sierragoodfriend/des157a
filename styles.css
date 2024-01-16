@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 1200px;
+    min-width: 900px;
+    background-color: #9b85a0;
+    color: rgb(19, 18, 18);
+}
+
+header {
+    font-family: "fino-sans", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+}
+
+#left-star:hover {
+    animation: left-star-rotate-animation 2s;
+}
+
+#right-star:hover {
+    animation: right-star-rotate-animation 2s;
+}
+
+@keyframes left-star-rotate-animation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(365deg);
+    }
+}
+
+@keyframes right-star-rotate-animation {
+    from {
+        transform: rotate(365deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+#header-name {
+margin: 20px 0px 0px 0px;
+background-image: url(images/fur.jpg);
+background-clip: text;
+background-size: 8%;
+animation: header-name-animation 7s infinite alternate;
+}
+
+@keyframes header-name-animation {
+    0% {color: rgba(19, 18, 18, 0.3);}
+    100% {color: rgba(19, 18, 18, 0.9);}
+}
+
+#header-info {
+    font-family: "sofia-pro", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+}
+
+
+#banner {
+    width: 1100px;
+    height: 250px; 
+    margin: 20px auto 15px auto;
+    border-radius: 20px;
+    background-image: url(images/texture.jpg);
+    background-size: 160%;
+    animation: banner-animation 55s infinite alternate;
+}
+
+@keyframes banner-animation {
+    0% {background-position: left;}
+    100% {background-position: right;}
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li a {
+    font-family: "sofia-pro", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    text-decoration: none;
+    font-size: 24px;
+    color: inherit;
+    transition: font-size 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    font-size: 26px;
+    color: rgb(57, 58, 63);
+    font-style: normal;
+}
+
+main {
+    line-height: 1.45;
+    margin-left: 7%;
+}
+
+.grid-col-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.assignment-titles {
+    font-family: "fino-sans", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: underline;
+}
+
+footer {
+    font-family: "sofia-pro", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    padding-top: 38px;
+    text-align: center;
+}
+
+a {
+    font-style: italic;
+    color: rgb(10, 78, 126);
+}
