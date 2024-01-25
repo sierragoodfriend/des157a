@@ -63,6 +63,11 @@ animation: header-name-animation 7s infinite alternate;
     font-size: 36px;
 }
 
+main {
+    line-height: 1.45;
+    margin-left: 7%;
+}
+
 
 #banner {
     width: 1100px;
@@ -99,10 +104,6 @@ nav ul li a:hover {
     font-style: normal;
 }
 
-main {
-    line-height: 1.45;
-    margin-left: 7%;
-}
 
 .grid-col-box {
     display: grid;

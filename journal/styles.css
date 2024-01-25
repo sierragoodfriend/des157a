@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: #9b85a0;
+    margin: auto;
+    width: 1200px;
+}
+
+h1 {
+    display: inline; 
+ }
+
+header {
+    text-align: center;
+    font-family: "fino-sans", sans-serif;
+    font-size: 30px;
+    margin: 20px 0px 0px 0px;
+    background-image: url(../images/fur.jpg);
+    background-clip: text;
+    background-size: 8%;
+    animation: header-name-animation 7s infinite alternate;
+}
+    
+@keyframes header-name-animation {
+    0% {color: rgba(19, 18, 18, 0.3);}
+    100% {color: rgba(19, 18, 18, 0.9);}
+}
+
+main {
+    font-family: "sofia-pro", sans-serif;
+    line-height: 1.5;
+    font-size: 18px;
+    margin: 20px 330px 20px 330px;
+}
+
+h3 {
+    font-size: 26px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+p {
+    margin-top: 20px;
+}
+
+
+#banner {
+    width: 600px;
+    height: 150px; 
+    margin: 20px auto 15px auto;
+    border-radius: 20px;
+    background-image: url(../images/texture.jpg);
+    background-size: 160%;
+    animation: banner-animation 55s infinite alternate;
+}
+
+@keyframes banner-animation {
+    0% {background-position: left;}
+    100% {background-position: right;}
+}
