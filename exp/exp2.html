@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Experimentation - Functions & DOM</title>
+    <style>
+
+
+
+    </style>
+</head>
+<body>
+
+    <script>
+        //My script gets a user's favorite color returned in a function, then stores that result in a variable. Then another function runs that takes an input of color (which ends up being the variable storing the favorite color result), and uses that input to change the background color using DOM.
+
+        const colorNames = [`red`, `green`, `blue`, `yellow`, `purple`, `orange`, `magenta`, `black`, `white`, `gray`, `teal`, `pink`, `violet`, `indigo`];
+
+        function getUserFavColor() {
+            let askUserFavColor = prompt(`Enter your favorite color (all lowercase please)`);
+            return askUserFavColor;
+        }
+
+        const userFavColor = getUserFavColor(); 
+
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+        
+        if (colorNames.includes(userFavColor)) {
+        changeBackgroundColor(userFavColor);
+        } else {
+            alert(`Couldn't input that color, please refresh the page and try another one!`);
+        }
+
+    </script>
+    
+</body>
+</html>
