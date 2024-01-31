@@ -43,6 +43,15 @@ h3 {
     text-align: center;
 }
 
+h4 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+article {
+    margin-bottom: 100px;
+}
+
 p {
     margin-top: 20px;
 }
