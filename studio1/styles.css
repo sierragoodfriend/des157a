@@ -1,0 +1,33 @@
+* {
+    margin: auto;
+}
+
+input, label, select {
+    display: block;
+    text-align: center;
+}
+
+input, select {
+    margin-bottom: 16px;
+}
+
+label {
+    margin-bottom: 4px;
+}
+
+
+/* <style>
+        input,
+        label {
+            display: block;
+        }
+
+        input {
+            margin-bottom: 1em;
+        }
+
+        fieldset input,
+        fieldset label {
+            display: inline;
+        }
+    </style> */
