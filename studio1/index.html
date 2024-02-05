@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MadLibs</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
@@ -12,53 +15,68 @@
     
     <main>
 
+        <header>
+            <h1>MadLib – DES 157A</h1>
+            <p>Please fill out the blanks and press send!</p>
+        </header>
+
         <form>
-            <label for="restaurant">Name of Restaurant</label>
-            <input type="text" id="restaurant">
+            <div id="flexbox-container">
 
-            <label for="adj1">Adjective</label>
-            <input type="text" id="adj1">
+                <section>
+                    <label for="restaurant">Name of Restaurant</label>
+                    <input type="text" id="restaurant">
 
-            <label for="color">Color</label>
-            <input type="text" id="color">
+                    <label for="adj1">Adjective</label>
+                    <input type="text" id="adj1">
 
-            <label for="adj2">Adjective</label>
-            <input type="text" id="adj2">
+                    <label for="color">Color</label>
+                    <input type="text" id="color">
 
-            <label for="sauce">Sauce</label>
-            <input type="text" id="sauce">
+                    <label for="adj2">Adjective</label>
+                    <input type="text" id="adj2">
 
-            <label for="personalitytrait">Personality Trait</label>
-            <input type="text" id="personalitytrait">
+                    <label for="sauce">Sauce</label>
+                    <input type="text" id="sauce">
 
-            <label for="number">Number</label>
-            <input type="text" id="number">
-            
-            <label for="dessert">Dessert</label>
-            <input type="text" id="dessert">
+                    <label for="personalitytrait">Personality Trait</label>
+                    <input type="text" id="personalitytrait">
+                </section>
 
-            <label for="animal">Animal</label>
-            <input type="text" id="animal">
+                <section>
+                    <label for="number">Number</label>
+                    <input type="text" id="number">
+                    
+                    <label for="dessert">Dessert</label>
+                    <input type="text" id="dessert">
 
-            <label for="car">Car</label>
-            <input type="text" id="car">
+                    <label for="animal">Animal</label>
+                    <input type="text" id="animal">
 
-            <label for="adj3">Adjective</label>
-            <input type="text" id="adj3">
+                    <label for="car">Car</label>
+                    <input type="text" id="car">
 
-            <label for="willwont">Pick One</label>
-            <select id="willwont">
-                <option value="" selected>---</option>
-                <option value="will">will</option>
-                <option value="wont">won't</option>
-            </select>
+                    <label for="adj3">Adjective</label>
+                    <input type="text" id="adj3">
 
-            <input type="submit" value="Send">
+                    <label for="willwont">Pick One</label>
+                    <select id="willwont">
+                        <option value="" selected>---</option>
+                        <option value="will">will</option>
+                        <option value="wont">won't</option>
+                    </select>
+                </section>
 
+            </div>
+            <input type="submit" id="send" value="Send">
         </form>
+
         <article id="madlib"></article>
 
     </main>
 
 </body>
 </html>
+
+<!-- <h1>Yum.com</h1>
+<h2>The #1 Place for Restaurant Reviews</h2> -->

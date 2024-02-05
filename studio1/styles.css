@@ -2,32 +2,59 @@
     margin: auto;
 }
 
+h1, p{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 20px auto 0px auto;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-decoration: underline;
+}
+
+#flexbox-container {
+    display: flex;
+    max-width: 550px;
+}
+
 input, label, select {
     display: block;
     text-align: center;
 }
 
 input, select {
-    margin-bottom: 16px;
+    width: 180px;
+    height: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
 label {
-    margin-bottom: 4px;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 3px;
+    font-family: 'Poppins', sans-serif;
 }
 
+input {
+    padding: 3px;
+}
 
-/* <style>
-        input,
-        label {
-            display: block;
-        }
+#send {
+    width: 70px;
+    height: 35px;
+    margin-top: 15px;
+}
 
-        input {
-            margin-bottom: 1em;
-        }
-
-        fieldset input,
-        fieldset label {
-            display: inline;
-        }
-    </style> */
+select {
+    height: 25px;
+}
