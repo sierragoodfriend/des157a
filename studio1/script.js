@@ -23,7 +23,7 @@ formTag.addEventListener(`submit`, function(event){
 
     let myText;
     if(restaurant == ``) {
-        myText = `Please provide the name of a restaurant!`;
+        myText = `Please provide the name of a restaurant`;
         document.querySelector(`#restaurant`).focus();
     } else if(adj1 == ``) {
         myText = `Please provide an adjective`;
