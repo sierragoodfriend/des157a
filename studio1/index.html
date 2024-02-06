@@ -12,71 +12,66 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    
-    <main>
-
         <header>
-            <h1>MadLib – DES 157A</h1>
-            <p>Please fill out the blanks and press send!</p>
+                <h1><img src="/images/burger.png"> Yelp Review <img src="/images/burger.png"></h1>
         </header>
+        
+        <main>
+            <form>
+                <section id="flexbox-container">
 
-        <form>
-            <div id="flexbox-container">
+                    <article>
+                        <label for="restaurant">Name of Restaurant<p class="example">(ex: Taco Bell, Dennys)</p></label>
+                        <input type="text" id="restaurant">
 
-                <section>
-                    <label for="restaurant">Name of Restaurant</label>
-                    <input type="text" id="restaurant">
+                        <label for="adj1">Adjective<p class="example">(ex: crooked, greasy)</p></label>
+                        <input type="text" id="adj1">
 
-                    <label for="adj1">Adjective</label>
-                    <input type="text" id="adj1">
+                        <label for="color">Color<p class="example">(ex: black, gold)</p></label>
+                        <input type="text" id="color">
 
-                    <label for="color">Color</label>
-                    <input type="text" id="color">
-
-                    <label for="adj2">Adjective</label>
-                    <input type="text" id="adj2">
-
-                    <label for="sauce">Sauce</label>
-                    <input type="text" id="sauce">
-
-                    <label for="personalitytrait">Personality Trait</label>
-                    <input type="text" id="personalitytrait">
-                </section>
-
-                <section>
-                    <label for="number">Number</label>
-                    <input type="text" id="number">
+                        <label for="adj2">Adjective<p class="example">(ex: slimy, colorless)</p></label>
+                        <input type="text" id="adj2">
+                    </article>
                     
-                    <label for="dessert">Dessert</label>
-                    <input type="text" id="dessert">
+                    <article>
+                        <label for="sauce">Sauce<p class="example">(ex: ranch, cholula)</p></label>
+                        <input type="text" id="sauce">
 
-                    <label for="animal">Animal</label>
-                    <input type="text" id="animal">
+                        <label for="personalitytrait">Personality Trait<p class="example">(ex: aggressive, shy)</p></label>
+                        <input type="text" id="personalitytrait">
+                    
+                        <label for="number">Number<p class="example">(ex: 2, 103)</p></label>
+                        <input type="text" id="number">
+                        
+                        <label for="dessert">Dessert<p class="example">(ex: creme brule, pie)</p></label>
+                        <input type="text" id="dessert">
+                    </article>
 
-                    <label for="car">Car</label>
-                    <input type="text" id="car">
+                    <article>
+                        <label for="animal">Animal<p class="example">(ex: kangaroo, cat)</p></label>
+                        <input type="text" id="animal">
 
-                    <label for="adj3">Adjective</label>
-                    <input type="text" id="adj3">
+                        <label for="car">Car<p class="example">(ex: bugatti, mustang)</p></label>
+                        <input type="text" id="car">
 
-                    <label for="willwont">Pick One</label>
-                    <select id="willwont">
-                        <option value="" selected>---</option>
-                        <option value="will">will</option>
-                        <option value="wont">won't</option>
-                    </select>
+                        <label for="adj3">Adjective<p class="example">(ex: hot, succulent)</p></label>
+                        <input type="text" id="adj3">
+
+                        <label for="willwont">Pick One<p class="example">(now press send!)</p></label>
+                        <select id="willwont">
+                            <option value="" selected>---</option>
+                            <option value="will">will</option>
+                            <option value="wont">won't</option>
+                        </select>
+                    </article>
+
                 </section>
+                <input type="submit" id="send" class="open" value="Send">
+            </form>
 
-            </div>
-            <input type="submit" id="send" value="Send">
-        </form>
+                <article id="madlib"></article>
+        </main>
 
-        <article id="madlib"></article>
-
-    </main>
-
-</body>
-</html>
-
-<!-- <h1>Yum.com</h1>
-<h2>The #1 Place for Restaurant Reviews</h2> -->
+    </body>
+    </html>
