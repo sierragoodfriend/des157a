@@ -15,7 +15,7 @@ h1, p{
 h1 {
     font-size: 48px;
     font-weight: 700;
-    margin: 25px auto 30px auto;
+    margin: 25px auto 40px auto;
     min-width: 700px;
 }
 
@@ -41,17 +41,17 @@ input, select {
     height: 20px;
     border-radius: 10px;
     font-size: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 43px;
 }
 
-input:hover, select:hover, #send:hover {
+input:hover, select:hover, #send:hover, button:hover {
     cursor: pointer;
     /* box-shadow: 0 0 10px rgb(255, 84, 206); */
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.75);
 }
 
 label {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 4px;
     font-family: 'Poppins', sans-serif;
@@ -60,6 +60,7 @@ label {
 input {
     padding: 3px;
     background-color: rgb(250, 239, 239);
+    font-family: 'Poppins', sans-serif;
 }
 
 select {
@@ -71,14 +72,19 @@ select {
     height: 45px;
     margin: auto;
     margin-top: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 17px;
 }
 
 .example {
     margin: auto;
-    font-size: 16px;
+    margin-bottom: 2px;
+    font-size: 14px;
     font-weight: 400;
     margin-bottom: 5px;
+}
+
+#overlayContainer{
+    position: relative;
 }
 
 #madlib {
@@ -87,6 +93,36 @@ select {
     font-weight: 400;
     color: rgb(249, 249, 130);
 }
+
+#overlay {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+ button {
+    display: none;
+    position: absolute;
+    right: 20px;
+    bottom: 13px;
+    background-color: rgb(249, 249, 130);
+    border-radius: 10px;
+    width: 95px;
+    height: 45px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+ }
+
+ .madlibstyles {
+    position: absolute;
+    left: 49.7%;
+    top: 64%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+ }
 
 
 

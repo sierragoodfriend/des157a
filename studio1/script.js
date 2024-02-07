@@ -3,6 +3,9 @@
 
 const madLibArticle = document.querySelector(`#madlib`);
 const formTag = document.querySelector(`form`);
+const btn = document.querySelector(`button`);
+const nonPopUpElements = document.querySelector(`#flexbox-container`);
+
 
 formTag.addEventListener(`submit`, function(event){
 
@@ -59,9 +62,18 @@ formTag.addEventListener(`submit`, function(event){
         myText = `Please select "will" or "won't"`;
         document.querySelector(`#willwont`).focus();
     } else {
-        myText = `Eating at ${restaurant} is a(n) ${adj1} experience.
+
+        madLibArticle.className = `madlibstyles`;
+        madLibArticle.style.color = `black`;
+        nonPopUpElements.style.opacity = `0%`;
+        
+        document.querySelector(`#overlay`).style.display = `block`;
+        document.querySelector(`button`).style.display = `block`;
+   
+        myText = `Eating at ${restaurant} is a ${adj1} experience.
         The interior of the restaurant is 100% ${color}, and weirdly ${adj2}.
-        The wait staff are particularly ${personalitytrait}. They made sure my food always arrived within ${number} minutes of ordering, and they even gave me an extra side of ${sauce} for my ${dessert}. Unfortunately, they don’t allow pets, so my ${animal} had to wait in my ${car}. Overall, I had a(n) ${adj3} experience here, and ${willwont} be coming back again!`
+        The wait staff are particularly ${personalitytrait}. They made sure my food always arrived within ${number} minutes of ordering, and they even gave me an extra side of ${sauce} for my ${dessert}. Unfortunately, they don’t allow pets, so my ${animal} had to wait in my ${car}. Overall, I had a ${adj3} experience here, and ${willwont} be coming back again!`
+
         document.querySelector(`#restaurant`).value = ``;
         document.querySelector(`#adj1`).value = ``;
         document.querySelector(`#color`).value = ``;
@@ -76,7 +88,18 @@ formTag.addEventListener(`submit`, function(event){
         document.querySelector(`#willwont`).value = ``;
     }
 
+    btn.addEventListener('click', function(event){
+        event.preventDefault();
+        document.querySelector(`#overlay`).style.display = `none`;
+        document.querySelector(`button`).style.display = `none`;
+        madLibArticle.classList.remove(`madlibstyles`);
+        madLibArticle.innerHTML = ``;
+        madLibArticle.style.color = `rgb(249, 249, 130)`;
+        nonPopUpElements.style.opacity = `100%`;
+    });
+
     madLibArticle.innerHTML = myText;
+
 
 });
 
