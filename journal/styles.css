@@ -83,3 +83,7 @@ a {
     font-style: italic;
     color: rgb(10, 78, 126);
 }
+
+img {
+    margin-top: 10px;
+}
