@@ -1,0 +1,63 @@
+#content {
+    display: block;
+    margin: 0 auto; 
+    margin-top: 100px;
+    width: 350px;
+    height: 467px;
+    position: relative;
+    border: 10px rgb(240, 241, 241) solid;
+    border-bottom: 70px rgb(240, 241, 241) solid;
+    outline-style: solid;
+    outline-width: 3px;
+}
+
+#content img {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#pin {
+    z-index: 2;
+}
+
+#previous, #next {
+    text-decoration: none;
+    font-size: 36px;
+    position: absolute;
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    color: green;
+}
+
+#previous {
+    margin-left: 30px;
+    left: 0;
+}
+
+#next {
+    margin-right: 30px;
+    right: 0;
+}
+
+.pinStyles {
+    z-index: 2;
+    margin: auto;
+    right: 0%;
+    bottom: 100%;
+    /* transform: translate(-50%, -50%); */
+}
+
+.fadeinimg {
+    animation: fadein 1.5s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
