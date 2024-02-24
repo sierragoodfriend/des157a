@@ -5,16 +5,11 @@ body {
 h1 {
     font-family: "Luckiest Guy", cursive;
     font-weight: 400;
-    background-color: rgb(224, 230, 230);
-    width: 200px;
+    width: 250px;
     margin-left: 30px;
-    left: 0;
-    bottom: 30px;
-    padding: 10px;
-    padding-bottom: 5px;
-    border-radius: 20px;
+    margin-bottom: 5px;
+    font-size: 36px;
 }
-
 
 #content {
     display: block;
@@ -55,13 +50,13 @@ h1 {
 #previous {
     margin-left: 30px;
     left: 0;
-    bottom: 30px;
+    bottom: 10px;
 }
 
 #next {
     margin-right: 30px;
     right: 0;
-    bottom: 20px;
+    bottom: 10px;
 }
 
 /* .pinStyles {
