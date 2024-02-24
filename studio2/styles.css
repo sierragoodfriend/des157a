@@ -14,7 +14,6 @@ h1 {
 #content {
     display: block;
     margin: 0 auto; 
-    /* margin-top: 70px; */
     width: 350px;
     height: 467px;
     position: relative;
@@ -45,6 +44,10 @@ h1 {
     border-radius: 20px;
     font-family: "Short Stack", cursive;
     font-weight: 400;
+}
+
+#previous:hover, #next:hover {
+    cursor: pointer;
 }
 
 #previous {
