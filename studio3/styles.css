@@ -1,0 +1,208 @@
+/* start page */
+body {
+    font-family: Arial;
+    color: #333;
+    padding: 50px;
+    line-height: 1.5em;
+}
+
+button { 
+    padding: 10px;
+}
+
+div {
+    padding: 20px;
+}
+
+#gamecontrol, #score {
+    background-color: aliceblue;
+}
+
+#game {
+    background-color:#eaeaea;
+}
+#actions {
+    background-color: silver;
+}
+
+
+
+
+/* ALL STYLES  */
+a {
+    text-decoration: none;
+}
+
+
+
+
+/* HOME PAGE STYLES */
+
+#bodyHomePage {
+/* free dice pattern from https://heropatterns.com/ */
+background-color: #DFDBE5;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='126' height='84' viewBox='0 0 126 84'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M126 83v1H0v-2h40V42H0v-2h40V0h2v40h40V0h2v40h40V0h2v83zm-2-1V42H84v40h40zM82 42H42v40h40V42zm-50-6a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm96 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm-42 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm30-12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM20 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm12 24a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM8 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM8 78a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm12 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm54 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM50 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM50 78a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm54-12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm12 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM92 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM92 78a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24-42a4 4 0 1 1 0-8 4 4 0 0 1 0 8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* h1 text and background styles */
+.h1HomePageaAndRules {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    line-height: 50px;
+    color: rgb(79, 29, 67);  
+    
+    margin-top: 8px;
+}
+
+/* h1 styles that are specific to HomePage */
+#h1HomePage {
+    width: 940px;
+    font-size: 70px;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 120px;
+    background-color: rgb(253, 196, 205);
+    border: rgb(79, 29, 67) 2px solid;
+    border-radius: 10px;  
+}
+
+/* Main tag –> the 3 sections 
+Display grid rules for the 2 pig images and the buttons
+Set width for page, and an automatic margin */
+#mainHomePage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 950px;
+    margin: auto;
+}
+
+/* Flexbox used here to center buttons*/
+#middleColumn {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+}
+
+/* create padding for the pig images (and buttons) so they aren't touching the background color */
+.outerColumns, #middleColumn {
+    padding: 25px;
+    border-radius: 13px;
+}
+
+/* Outer columns –> pig images*/
+.outerColumns {
+    background-color: rgba(212, 138, 213, 0.474);
+    border: 4px rgb(212, 138, 213) solid;
+}
+
+/* animation for pig images to move up and down */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    } 
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.outerColumns img {
+    animation: moveUpDown 2s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* Start & rule button 
+Font style
+Background, padding is around text*/
+.rulesButton, #startButton {
+    font-family: "Cute Font", sans-serif;
+    font-weight: 400;
+    font-size: 45px;
+    color: rgb(79, 29, 67);
+    background-color: rgb(253, 196, 205);
+    border-radius: 10px;
+    padding: 4px 16px 4px 16px;
+}
+
+/* spacing between buttons */
+.rulesButton {
+    margin-top: 30px;
+}
+
+/* make cursor turn to pointer over buttons */
+#rulesButton:hover, #startButton:hover {
+    cursor: pointer;
+    padding: 4px 20px 4px 20px;
+    box-shadow: 5px 5px 5px rgba(79, 29, 67, 0.574);
+}
+
+
+
+
+
+/* RULES PAGE STYLES */
+
+#bodyRulesPage {
+    background-color: rgba(212, 138, 213, 0.474);
+    padding: 15px;
+}
+
+#headerRules {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* h1 styles that are specific to Rules Page 
+see the .h1HomePageaAndRules class rules in the homepage section for other styles */
+#h1Rules {
+    width: 400px;
+    margin-bottom: 40px;
+    font-size: 50px;
+    padding: 10px;
+    text-align: center;
+    height: 60px;
+    width: 400px;
+}
+
+/* Main element of rules page
+pig image and buttons go next to each other with grid */
+#rules {
+    font-family: "Cute Font", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+    margin-top: -90px; /* makes text higher up towards h1 */
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* text column = 75% */
+    min-width: 900px;
+}
+
+/* sections of grid layout on rules page in main */
+#textSection, #imageSection {
+    padding: 40px;
+}
+
+.buttonsRulesPage {
+    display: block;
+    margin: 30px 0px 0px 50px;
+    color: rgb(79, 29, 67);
+    background-color: rgb(253, 196, 205);
+    font-size: 34px;
+}
+
+.buttonsRulesPage:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 5px rgba(79, 29, 67, 0.574);
+}
+
+
+
+
+
