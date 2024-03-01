@@ -7,31 +7,43 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Pixelify+Sans&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Cute+Font&display=swap" rel="stylesheet">
 	<link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body id="bodyHomePage">
 
     <header>
+        <div id="player1ScoreContainer"></div>
         <h1 id="h1HomePage" class="h1HomePageaAndRules">Welcome to the game of pig!</h1>
+        <div id="player2ScoreContainer"></div>
     </header>
 
     <main id="mainHomePage">
-        <section class="outerColumns">
-            <img src="images/pigImgLeft.png" alt="Cute Pig 1" width="300" height="269"> 
-        </section>
-        <section id="middleColumn">
-            <a href="start.html">
-                <button id="startButton">Start</button>
-            </a>
-            <a href="rules.html">
-                <button class="rulesButton">Rules</button>
-            </a>
-        </section>
-        <section class="outerColumns">
-            <img src="images/pigImgRight.png" alt="Cute Pig 2" width="300" height="269">
-        </section>
+
+        <div id="flexWrapColumns">
+            <section id="leftColumn" class="outerColumns">
+                <img src="images/pigImgLeft.png" alt="Cute Pig 1" width="300" height="269"> 
+            </section>
+
+            <section id="middleColumn">
+                    <button id="startButton">Start</button>
+                    <a href="rules.html">
+                    <button class="rulesButton">Rules</button>
+                    </a>
+            </section>
+            
+            <section id="rightColumn" class="outerColumns">
+                <img src="images/pigImgRight.png" alt="Cute Pig 2" width="300" height="269">
+            </section>
+        </div>
+        <div id="dice"></div>
+        <div id="action"></div>
+        <button id="quit" class="displayQuit">Quit Game</button>
+        <div id="youWon"></div>
     </main> 
+
+    <footer class="footerStyles"></footer>
 
 </body>
 </html>

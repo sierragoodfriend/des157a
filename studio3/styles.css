@@ -1,30 +1,3 @@
-/* start page */
-body {
-    font-family: Arial;
-    color: #333;
-    padding: 50px;
-    line-height: 1.5em;
-}
-
-button { 
-    padding: 10px;
-}
-
-div {
-    padding: 20px;
-}
-
-#gamecontrol, #score {
-    background-color: aliceblue;
-}
-
-#game {
-    background-color:#eaeaea;
-}
-#actions {
-    background-color: silver;
-}
-
 
 
 
@@ -33,7 +6,16 @@ a {
     text-decoration: none;
 }
 
+body {
+    font-family: Arial;
+    color: #333;
+    /* padding: 50px 50px 0px 50px; */
+    line-height: 1.5em;
+}
 
+button { 
+    padding: 10px;  
+}
 
 
 /* HOME PAGE STYLES */
@@ -46,36 +28,50 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 /* h1 text and background styles */
 .h1HomePageaAndRules {
-    font-family: "Pixelify Sans", sans-serif;
-    font-optical-sizing: auto;
+    font-family: "Anta", sans-serif;
     font-weight: 400;
     line-height: 50px;
     color: rgb(79, 29, 67);  
-    
     margin-top: 8px;
 }
 
 /* h1 styles that are specific to HomePage */
 #h1HomePage {
-    width: 940px;
+    width: 100%;
+    height: 118.5px;
+    padding-top: 47px;
     font-size: 70px;
-    padding: 20px;
     margin: auto;
-    margin-bottom: 120px;
-    background-color: rgb(253, 196, 205);
-    border: rgb(79, 29, 67) 2px solid;
+    margin-bottom: 86.3px;
+    background-color: rgb(234, 199, 235);
     border-radius: 10px;  
+    text-align: center;
+}
+
+.footerStyles {
+    margin-top: 19px;
+    width: 100%;
+    height: 56px;
+    background-color: rgb(234, 199, 235);
 }
 
 /* Main tag –> the 3 sections 
-Display grid rules for the 2 pig images and the buttons
-Set width for page, and an automatic margin */
+Flex rules for 2 pig images and the buttons on home page (score (not btns) on game page)
+Set width for page*/
+
 #mainHomePage {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    width: 950px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* flex for columns and margin bottom */
+#flexWrapColumns {
+    display: flex;
+    justify-content: space-between;
     margin: auto;
+    width: 950px;
+    margin-bottom: 50px;
 }
 
 /* Flexbox used here to center buttons*/
@@ -84,11 +80,13 @@ Set width for page, and an automatic margin */
     flex-direction: column; 
     align-items: center;
     justify-content: center;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 /* create padding for the pig images (and buttons) so they aren't touching the background color */
 .outerColumns, #middleColumn {
-    padding: 25px;
+    padding: 17px 16px 35px 16px;
     border-radius: 13px;
 }
 
@@ -98,13 +96,21 @@ Set width for page, and an automatic margin */
     border: 4px rgb(212, 138, 213) solid;
 }
 
+#leftColumn {
+    margin-left: 10px;
+}
+
+#rightColumn {
+    margin-right: 13px;
+}
+
 /* animation for pig images to move up and down */
 @keyframes moveUpDown {
     0% {
         transform: translateY(0);
     } 
     50% {
-        transform: translateY(10px);
+        transform: translateY(25px);
     }
     100% {
         transform: translateY(0);
@@ -135,7 +141,7 @@ Background, padding is around text*/
 }
 
 /* make cursor turn to pointer over buttons */
-#rulesButton:hover, #startButton:hover {
+.rulesButton:hover, #startButton:hover {
     cursor: pointer;
     padding: 4px 20px 4px 20px;
     box-shadow: 5px 5px 5px rgba(79, 29, 67, 0.574);
@@ -143,12 +149,10 @@ Background, padding is around text*/
 
 
 
-
-
 /* RULES PAGE STYLES */
 
 #bodyRulesPage {
-    background-color: rgba(212, 138, 213, 0.474);
+    background-color: rgb(234, 199, 235);
     padding: 15px;
 }
 
@@ -186,21 +190,131 @@ pig image and buttons go next to each other with grid */
 
 /* sections of grid layout on rules page in main */
 #textSection, #imageSection {
-    padding: 40px;
+    padding: 30px 10px 10px 15px;
+}
+
+#rulesPigStyles {
+    margin-top: 120px;
 }
 
 .buttonsRulesPage {
     display: block;
-    margin: 30px 0px 0px 50px;
+    margin: 20px 0px 0px 50px;
     color: rgb(79, 29, 67);
     background-color: rgb(253, 196, 205);
     font-size: 34px;
+    border-radius: 10px;
 }
 
 .buttonsRulesPage:hover {
     cursor: pointer;
     box-shadow: 5px 5px 5px rgba(79, 29, 67, 0.574);
 }
+
+
+
+
+/* GAME PLAY STYLES */
+
+/* make scores go next to header */
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* score in top left and right */
+#player1ScoreContainer, #player2ScoreContainer {
+    font-family: "Cute Font", sans-serif;
+    font-weight: 400;
+    font-size: 56px;
+    position: absolute;
+    text-align: center;
+    line-height: 60px;
+    padding: 13.5px 20px 13.5px 20px;
+    background-color: rgb(216, 168, 220);
+}
+#player1ScoreContainer {
+    left: 0px;
+}
+
+#player2ScoreContainer {
+    right: 0px;
+}
+
+@keyframes pigMoving {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.3);}
+    100% {transform: scale(1);}
+}
+
+.playingPigAnimation {
+    animation: pigMoving 4s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* styles for roll dice, pass, and quit button, seperate styles below 
+roll dice and pass use the same class of .roll*/
+.roll, #quit {
+    font-family: "Cute Font", sans-serif;
+    font-weight: 400;
+    color: rgb(79, 29, 67);
+}
+.roll:hover, #quit:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 5px rgba(79, 29, 67, 0.574);
+}
+
+.roll {
+    font-size: 64px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    background-color: rgb(253, 196, 205);
+}
+.roll:hover{padding: 4px 15px 4px 15px;}
+
+#rollagain {
+    padding: 5px 15px 5px 15px;
+}
+
+#pass {
+    margin-left: 50px;
+    padding: 5px 72px 5px 72px;
+}
+
+#quit {
+    font-size: 32px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    padding: 3px 7px 3px 7px;
+    border-radius: 10px;
+    background-color: rgb(216, 194, 197);
+}
+#quit:hover{padding: 4px 10px 4px 10px;}
+
+.displayQuit {
+    display: none;
+}
+
+/* dice display */
+#dice {
+    margin-bottom: 15px;
+}
+
+
+
+
+/* YOU WON POP UP STYLES */
+
+/* #winnerPopUp {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+} */
 
 
 
