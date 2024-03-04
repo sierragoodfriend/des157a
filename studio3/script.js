@@ -78,6 +78,10 @@
             //redo styles for when a player switches turns
             h1Playing.style.marginBottom = `83.3px`;
             middleColumnContainer.style.marginBottom = `50px`;
+
+            //reset margin-top for quit button in case 1 was rolled
+            quitBtn.style.marginTop = `15px`;
+
             //add & delete class animation on pigs depending on whose turn it is
             const currentPlayer = document.querySelector(`#inGamePigImg${gameData.index}`);
             currentPlayer.classList.add(`playingPigAnimation`);
@@ -86,7 +90,7 @@
 
             h1Playing.innerHTML = `${gameData.players[gameData.index]}'s turn`; //change turns 
 
-            actionArea.innerHTML = `<button class="roll">Roll Dice !</button>`;
+            actionArea.innerHTML = `<button class="roll">Roll Dice!</button>`;
 
             document.querySelector(`.roll`).addEventListener(`click`, function(){
 
@@ -110,6 +114,10 @@
 
         if(gameData.rollSum === 2){
             //edit look of header
+
+            //margin-top for quit btn so spacing doesn't change
+            quitBtn.style.marginTop = `95px`;
+
             h1Playing.innerHTML = `SNAKE EYES!`
             gameData.score[gameData.index] = 0;
             gameData.index ? (gameData.index = 0) : (gameData.index = 1); 
@@ -120,12 +128,15 @@
             //Update player 1 and 2 scores for HTML
             updatePlayerScore();
             
-            setTimeout(setUpTurn, 1400);
+            setTimeout(switchingPlayers, 1400);
 
         } else if(gameData.roll1 === 1 || gameData.roll2 === 1){
 
             //edit look of header
             h1Playing.innerHTML = `A 1 was rolled`
+
+            //margin-top for quit btn so spacing doesn't change
+            quitBtn.style.marginTop = `95px`;
 
             scorePerRound.innerHTML = 0; //set roundSum scoring back to zero
 
@@ -133,7 +144,7 @@
 
             gameData.index ? (gameData.index = 0) : (gameData.index = 1); //switch players
 
-            setTimeout(setUpTurn, 1400);
+            setTimeout(switchingPlayers, 1400);
 
         } else {
 
@@ -167,11 +178,16 @@
                 gameData.index ? (gameData.index = 0) : (gameData.index = 1); //switch players
                 scorePerRound.innerHTML = 0;
 
-                setTimeout(setUpTurn, 1400);
+                switchingPlayers();
             });
 
             console.log(gameData.score);
         }
+    }
+
+    function switchingPlayers() {
+        h1Playing.innerHTML = `switching players...`
+        setTimeout(setUpTurn, 1400);
     }
 
     function updatePlayerScore() {
