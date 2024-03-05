@@ -14,7 +14,6 @@
     const actionArea = document.querySelector(`#action`);
     const quitBtn = document.querySelector(`#quit`);
     const winnerPopUp = document.querySelector(`#youWon`);
-
     const displayDice = document.querySelector(`#dice`);
 
     const gameData = {
@@ -115,8 +114,9 @@
         if(gameData.rollSum === 2){
             //edit look of header
 
-            //margin-top for quit btn so spacing doesn't change
-            quitBtn.style.marginTop = `95px`;
+            //margin-top and margin-bottom for quit btn and score container so spacing doesn't change when 1 is rolled
+            middleColumnContainer.style.marginBottom = `47.5px`;
+            quitBtn.style.marginTop = `47.5px`;
 
             h1Playing.innerHTML = `SNAKE EYES!`
             gameData.score[gameData.index] = 0;
@@ -128,15 +128,16 @@
             //Update player 1 and 2 scores for HTML
             updatePlayerScore();
             
-            setTimeout(switchingPlayers, 1400);
+            setTimeout(switchingPlayers, 1100);
 
         } else if(gameData.roll1 === 1 || gameData.roll2 === 1){
 
             //edit look of header
             h1Playing.innerHTML = `A 1 was rolled`
 
-            //margin-top for quit btn so spacing doesn't change
-            quitBtn.style.marginTop = `95px`;
+            //margin-top and margin-bottom for quit btn and score container so spacing doesn't change when 1 is rolled
+            middleColumnContainer.style.marginBottom = `47.5px`;
+            quitBtn.style.marginTop = `47.5px`;
 
             scorePerRound.innerHTML = 0; //set roundSum scoring back to zero
 
@@ -144,7 +145,7 @@
 
             gameData.index ? (gameData.index = 0) : (gameData.index = 1); //switch players
 
-            setTimeout(switchingPlayers, 1400);
+            setTimeout(switchingPlayers, 1100);
 
         } else {
 
@@ -187,7 +188,7 @@
 
     function switchingPlayers() {
         h1Playing.innerHTML = `switching players...`
-        setTimeout(setUpTurn, 1400);
+        setTimeout(setUpTurn, 1100);
     }
 
     function updatePlayerScore() {
