@@ -1,6 +1,3 @@
-
-
-
 /* ALL STYLES  */
 a {
     text-decoration: none;
@@ -46,10 +43,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 .footerStyles {
-    margin-top: 19px;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    height: 56px;
+    height: 10vh;
     background-color: rgb(234, 199, 235);
+    margin-top: 10px;
 }
 
 /* Main tag –> the 3 sections 
@@ -68,7 +67,6 @@ Set width for page*/
     justify-content: space-between;
     margin: auto;
     width: 950px;
-    margin-bottom: 50px;
 }
 
 /* Flexbox used here to center buttons on home page and round score on gameplay page*/
@@ -129,18 +127,22 @@ Background, padding is around text*/
     color: rgb(79, 29, 67);
     background-color: rgb(253, 196, 205);
     border-radius: 10px;
+}
+
+#startButton {
     padding: 4px 16px 4px 16px;
 }
 
 /* spacing between buttons */
 .rulesButton {
     margin-top: 30px;
+    padding: 15px;
+    outline: black solid 1px;
 }
 
 /* make cursor turn to pointer over buttons */
 .rulesButton:hover, #startButton:hover {
     cursor: pointer;
-    padding: 4px 20px 4px 20px;
     box-shadow: 5px 5px 5px rgba(79, 29, 67, 0.574);
 }
 
@@ -196,12 +198,15 @@ pig image and buttons go next to each other with grid */
 }
 
 .buttonsRulesPage {
-    display: block;
+    display: inline-block;
     margin: 20px 0px 0px 50px;
     color: rgb(79, 29, 67);
     background-color: rgb(253, 196, 205);
     font-size: 34px;
+    padding: 15px;
+    outline: black solid 1px;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .buttonsRulesPage:hover {
@@ -263,27 +268,23 @@ roll dice and pass use the same class of .roll*/
 }
 
 .roll {
-    font-size: 64px;
-    padding: 5px 10px 5px 10px;
+    font-size: 62px;
+    padding: 0px 20px 0px 20px;
     border-radius: 15px;
     background-color: rgb(253, 196, 205);
 }
-.roll:hover{padding: 4px 15px 4px 15px;}
 
-#rollagain {
-    padding: 5px 15px 5px 15px;
-}
 
 #pass {
     margin-left: 50px;
-    padding: 5px 72px 5px 72px;
+    padding: 0px 72px 0px 72px;
 }
 
 #quit {
-    font-size: 32px;
-    margin-top: 12px;
+    font-size: 26px;
+    margin-top: 10px;
     margin-bottom: 0;
-    padding: 3px 7px 3px 7px;
+    padding: 2px 7px 2px 7px;
     border-radius: 10px;
     background-color: rgb(216, 194, 197);
 }
@@ -326,7 +327,7 @@ roll dice and pass use the same class of .roll*/
 }
 
 /* go home buttons styles */
-#goHome {
+.goHome {
     margin-top: 100px;
     font-family: "Cute Font", sans-serif;
     font-weight: 400;
@@ -335,10 +336,32 @@ roll dice and pass use the same class of .roll*/
     background-color: rgb(253, 196, 205);
     border-radius: 10px;
     padding: 4px 16px 4px 16px;
+    outline: black solid 1px;
 }
 
-#goHome:hover {
+.goHome:hover {
     cursor: pointer;
     padding: 4px 20px 4px 20px;
     box-shadow: 5px 5px 5px rgba(79, 29, 67, 0.574);
+}
+
+
+#sourcesStyles {
+    position: absolute;
+    color: rgb(79, 29, 67);
+    font-size: 36px;
+    bottom: 10px;
+    left: 10px;
+    font-family: "Cute Font", sans-serif;
+    font-weight: 400;
+    opacity: 50%;
+}
+
+#bodySources {
+    background-color: rgb(216, 168, 220);
+    font-family: "Cute Font", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    text-align: center;
+    padding: 0px 50px;
 }

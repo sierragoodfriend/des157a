@@ -16,6 +16,10 @@
     const winnerPopUp = document.querySelector(`#youWon`);
     const displayDice = document.querySelector(`#dice`);
 
+    const diceRollSound = new Audio(`sounds/dice.mp3`);
+    const pigSound1 = new Audio(`sounds/pigGrunt1.mp3`);
+    const pigSound2 = new Audio(`sounds/pigGrunt2.mp3`);
+
     const gameData = {
         dice: ['images/1die.png', 'images/2die.png', 'images/3die.png', 'images/4die.png', 'images/5die.png', 'images/6die.png'],
         players: ['Player 1', 'Player 2'],
@@ -35,7 +39,7 @@
         h1Playing.style.backgroundColor = `rgb(234, 199, 235)`;
 
         //remove footer styles
-        footer.style.display = `none`;
+        footer.style.height = `5vh`;
 
         //remove outer column classes
         player1.classList.remove(`outerColumns`); 
@@ -74,9 +78,10 @@
     function setUpTurn(){
             //stop displaying dice after a players turn
             displayDice.innerHTML = ``;
-            //redo styles for when a player switches turns
+
+            //keep spacing the same for where quit btn and other btns are
             h1Playing.style.marginBottom = `83.3px`;
-            middleColumnContainer.style.marginBottom = `50px`;
+            middleColumnContainer.style.marginBottom = `70px`;
 
             //reset margin-top for quit button in case 1 was rolled
             quitBtn.style.marginTop = `15px`;
@@ -91,10 +96,13 @@
 
             actionArea.innerHTML = `<button class="roll">Roll Dice!</button>`;
 
-            document.querySelector(`.roll`).addEventListener(`click`, function(){
+            document.querySelector(`.roll`).addEventListener(`mousedown`, function(){
+            diceRollSound.play();
+            });
 
+            document.querySelector(`.roll`).addEventListener(`click`, function(){
             throwDice();
-        })
+            });
     };
 
     //runs through all possible dice rolls and their consequences / affect on scoring
@@ -114,9 +122,8 @@
         if(gameData.rollSum === 2){
             //edit look of header
 
-            //margin-top and margin-bottom for quit btn and score container so spacing doesn't change when 1 is rolled
-            middleColumnContainer.style.marginBottom = `47.5px`;
-            quitBtn.style.marginTop = `47.5px`;
+            //margin-top for quit btn so spacing doesn't change when 1 is rolled
+            quitBtn.style.marginTop = `87.5px`;
 
             h1Playing.innerHTML = `SNAKE EYES!`
             gameData.score[gameData.index] = 0;
@@ -135,9 +142,8 @@
             //edit look of header
             h1Playing.innerHTML = `A 1 was rolled`
 
-            //margin-top and margin-bottom for quit btn and score container so spacing doesn't change when 1 is rolled
-            middleColumnContainer.style.marginBottom = `47.5px`;
-            quitBtn.style.marginTop = `47.5px`;
+            //margin-top for quit btn so spacing doesn't change when 1 is rolled
+            quitBtn.style.marginTop = `87.5px`;
 
             scorePerRound.innerHTML = 0; //set roundSum scoring back to zero
 
@@ -159,11 +165,14 @@
 ;
             actionArea.innerHTML = `<button id="rollagain" class="roll">Roll Again!</button><button id="pass" class="roll">Pass</button>`;
 
+            //sound for rolling dice again
+            document.querySelector(`#rollagain`).addEventListener(`mousedown`, function(){
+            diceRollSound.play();
+            });
+
             //roll again button
             document.querySelector(`#rollagain`).addEventListener(`click`, function(){
-
             throwDice();
-
             });
 
             //Pass button – passing a turn adds your roundSum score to your total score up at the top
@@ -187,6 +196,13 @@
     }
 
     function switchingPlayers() {
+        //play pig sound
+        if(gameData.index === 0) {
+            pigSound1.play();
+        } else if(gameData.index === 1){
+            pigSound2.play();
+        }
+
         h1Playing.innerHTML = `switching players...`
         setTimeout(setUpTurn, 1100);
     }
@@ -196,11 +212,11 @@
         //check winning condition here
         //have pop-up display flex instead of hidden
         if(gameData.score[gameData.index] > gameData.gameEnd) {
-            winnerPopUp.innerHTML = `Congrats ${gameData.players[gameData.index]}, you won with ${gameData.score[gameData.index]} points! <button id="goHome">Go home!</button>`;
+            winnerPopUp.innerHTML = `Congrats ${gameData.players[gameData.index]}, you won with ${gameData.score[gameData.index]} points! <button class="goHome">Go home!</button>`;
             winnerPopUp.style.display = `flex`;
 
             //declare go home btn after it's added to html
-            const goHomeBtn = document.querySelector(`#goHome`);
+            const goHomeBtn = document.querySelector(`.goHome`);
 
             goHomeBtn.addEventListener(`click`, function(){
                 location.reload();
