@@ -47,6 +47,13 @@ a:hover {
     font-size: 26px;
 }
 
+.questionsStyles {
+    color: rgb(71, 10, 162);
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 20px;
+}
 
 
 
