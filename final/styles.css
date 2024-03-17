@@ -1,75 +1,484 @@
-body {
-    background-color: rgb(251, 228, 201);
+/* ALL STYLES  */
+a {
+    text-decoration: none;
 }
 
-h1 {
-    color: rgb(58, 10, 130);
-    font-family: "Libre Franklin", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-size: 48px;
+body {
+    color: #333;
+    /* padding: 50px 50px 0px 50px; */
+    line-height: 1.5em;
+}
+
+button { 
+    padding: 10px;  
+}
+
+
+/* HOME PAGE STYLES */
+
+#bodyHomePage {
+background-color: #f9eaec;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='126' height='84' viewBox='0 0 126 84'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ed9fe6' fill-opacity='0.33'%3E%3Cpath d='M126 83v1H0v-2h40V42H0v-2h40V0h2v40h40V0h2v40h40V0h2v83zm-2-1V42H84v40h40zM82 42H42v40h40V42zm-50-6a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm96 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm-42 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm30-12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM20 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm12 24a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM8 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM8 78a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm12 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm54 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM50 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM50 78a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm54-12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm12 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM92 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM92 78a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24-42a4 4 0 1 1 0-8 4 4 0 0 1 0 8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* h1 text and background styles */
+.h1HomePageaAndRules {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    line-height: 50px;
+    color: rgb(79, 29, 67);  
+    margin-top: 8px;
+}
+
+/* h1 styles that are specific to HomePage */
+#h1HomePage {
+    width: 100%;
+    height: 120px;
+    padding-top: 58px;
+    font-size: 70px;
+    margin: auto;
+    margin-bottom: 73.3px;
+    background-color: rgb(234, 199, 235); 
     text-align: center;
 }
 
-section {
-    font-family: "Lexend", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
+.footerStyles {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(234, 199, 235);
+    margin-top: 10px;
+}
+
+/* Main tag –> the 3 sections 
+Flex rules for 2 pig images and the buttons on home page (score (not btns) on game page)
+Set width for page*/
+
+#mainHomePage {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-h2 {
-    color: rgb(71, 10, 162);
-    font-size: 32px;
+/* flex for columns and margin bottom */
+#flexWrapColumns {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 950px;
+}
+
+/* Flexbox used here to center buttons on home page and round score on gameplay page*/
+#middleColumn {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* create padding for the pig images (and buttons) so they aren't touching the background color */
+.outerColumns, #middleColumn {
+    padding: 17px 16px 35px 16px;
+    border-radius: 13px;
+}
+
+/* Outer columns –> pig images*/
+.outerColumns {
+    background-color: rgba(212, 138, 213, 0.474);
+    border: 4px rgb(212, 138, 213) solid;
+}
+
+#leftColumn {
+    margin-left: 10px;
+}
+
+#rightColumn {
+    margin-right: 13px;
+}
+
+/* animation for pig images to move up and down */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    } 
+    50% {
+        transform: translateY(25px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.outerColumns img {
+    animation: moveUpDown 2s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* Start & rule button 
+Font style
+Background, padding is around text*/
+.rulesButton, #startButton {
+    font-family: "Cute Font", sans-serif;
+    font-weight: 400;
+    font-size: 45px;
+    color: rgb(79, 29, 67);
+    background-color: rgb(253, 196, 205);
+    border-radius: 10px;
+}
+
+#startButton {
+    padding: 4px 16px 4px 16px;
+}
+
+/* spacing between buttons */
+.rulesButton {
+    margin-top: 30px;
+    padding: 15px;
+    outline: black solid 1px;
+}
+
+/* make cursor turn to pointer over buttons */
+.rulesButton:hover, #startButton:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 5px rgba(79, 29, 67, 0.574);
+}
+
+/* GAME PLAY STYLES */
+
+/* make scores go next to header */
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* score in top left and right, only displays on gameplay */
+#player1ScoreContainer, #player2ScoreContainer {
+    display: none;
+    font-family: "Cute Font", sans-serif;
+    font-weight: 400;
+    font-size: 56px;
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    text-align: center;
+    line-height: 55px;
+    padding: 28.7px;
+    background-color: rgb(216, 168, 220);
+}
+#player1ScoreContainer {
+    left: 0px;
+}
+
+#player2ScoreContainer {
+    right: 0px;
+}
+
+@keyframes pigMoving {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.3);}
+    100% {transform: scale(1);}
+}
+
+.playingPigAnimation {
+    animation: pigMoving 4s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* styles for roll dice, pass, and quit button, seperate styles below 
+roll dice and pass use the same class of .roll*/
+.roll, #quit {
+    font-family: "Cute Font", sans-serif;
+    font-weight: 400;
+    color: rgb(79, 29, 67);
+}
+
+.roll:hover, #quit:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 5px rgba(79, 29, 67, 0.574);
+}
+
+.roll {
+    font-size: 62px;
+    padding: 0px 20px 0px 20px;
+    border-radius: 15px;
+    background-color: rgb(253, 196, 205);
+}
+
+
+#pass {
+    margin-left: 50px;
+    padding: 0px 72px 0px 72px;
+}
+
+/* round score getting smaller on pass  */
+@keyframes roundScoreShrinkingAnimation {
+    0% {font-size: 80px;}
+    100% {font-size: 0px;}
+}
+.roundScoreShrinking {
+    animation: roundScoreShrinkingAnimation 2s; 
+    animation-timing-function: ease-in;
+}
+
+#quit {
+    font-size: 26px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 2px 7px 2px 7px;
+    border-radius: 10px;
+    background-color: rgb(216, 194, 197);
+}
+#quit:hover{padding: 4px 10px 4px 10px;}
+
+.displayQuit {
+    display: none;
+}
+
+/* dice display */
+#dice {
     margin-bottom: 0px;
 }
 
-p {
-    max-width: 500px;
-    font-size: 20px;
-    line-height: 30px;
+/* this animation causes the roundscore to shrink upon passing */
+.shrinkRoundScore {
+    animation: shrinkRoundScoreAnimation 1.2s forwards;
+}
+@keyframes shrinkRoundScoreAnimation {
+    100% {font-size: 0;}
 }
 
-a {
-    color: rgb(71, 10, 162);
-    font-family: "Lexend", sans-serif;
-    font-optical-sizing: auto;
+/* this is animation to expand and contrast the player score upon passing to make it clear where the roundsum is going */
+.playerScoreExpandContrast {
+    animation: playerScoreExpandContrastAnimation 2.5s;
+}
+@keyframes playerScoreExpandContrastAnimation {
+    0%, 30%, 100% {font-size: 56px;}
+    50% {font-size: 80px;}
+}
+
+
+/* YOU WON POP UP STYLES */
+
+#youWon {
+    display: none; /* Initially hidden until player score is > gameEnd*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(224, 184, 227);
+    color: rgb(79, 29, 67);
+    z-index: 10;
+    font-family: "Cute Font", sans-serif;
     font-weight: 400;
-    font-size: 24px;
-    text-decoration: none;
-    margin-top: 20px;
+    font-size: 68px;
+    line-height: 60px;
+    text-align: center;
+
+    /* align text in center for when flex is turned on*/
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-a:hover {
+/* go home buttons styles */
+.goHome {
+    margin-top: 100px;
+    font-family: "Cute Font", sans-serif;
+    font-weight: 400;
+    font-size: 45px;
+    color: rgb(79, 29, 67);
+    background-color: rgb(253, 196, 205);
+    border-radius: 10px;
+    padding: 4px 16px 4px 16px;
+    outline: black solid 1px;
+}
+
+.goHome:hover {
     cursor: pointer;
-    font-size: 26px;
-}
-
-.questionsStyles {
-    color: rgb(71, 10, 162);
-    font-family: "Libre Franklin", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-size: 20px;
+    padding: 4px 20px 4px 20px;
+    box-shadow: 5px 5px 5px rgba(79, 29, 67, 0.574);
 }
 
 
+#sourcesStyles {
+    position: absolute;
+    color: rgb(79, 29, 67);
+    font-size: 36px;
+    bottom: 10px;
+    left: 10px;
+    font-family: "Cute Font", sans-serif;
+    font-weight: 400;
+    opacity: 50%;
+}
 
-/* 
-.lexend-<uniquifier> {
-    font-family: "Lexend", sans-serif;
-    font-optical-sizing: auto;
+#bodySources {
+    background-color: rgb(216, 168, 220);
+    font-family: "Cute Font", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    text-align: center;
+    padding: 0px 50px;
+}
+
+/* image of pig on winner page applied animation below */
+#winningPigStyles {
+    margin-top: 140px;
+    animation: winningPigJumpAndRotate 2s infinite;
+}
+@keyframes winningPigJumpAndRotate {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-50px) rotate(0deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+}
+
+
+/* RULES PAGE STYLES */
+
+/* put header and rules boxes in line with one another  */
+#flexHeaderRules {
+    display: flex;
+    flex-direction: column;
+}
+
+#bodyRulesPage {
+    background-color: rgb(234, 199, 235);
+    padding: 15px;
+}
+
+#headerRules {
+    font-family: "DM Serif Display", serif;
     font-weight: 400;
     font-style: normal;
-  }
+    width: 800px;
+    display: flex;
+    /* header and page num space between */
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 40px;
+    font-size: 20px;
+    background-color: #ba75b3;
+    padding-left: 37.5px;
+    padding-right: 37.5px;
+    border: 10px solid rgb(131, 96, 185);
+    border-bottom: none;
+}
 
+#h2Rules {
+    font-size: 36px;
+}
 
+/* make header and page number align space between */
 
-  .libre-franklin-<uniquifier> {
-    font-family: "Libre Franklin", sans-serif;
+#rulesBox {
+    background-color: rgb(131, 96, 185);
+    
+    margin: auto;
+    width: 800px;
+    height: 525px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 75px;
+    border: 10px solid #ba75b3;
+    border-top: none;
+}
+
+.flexRuleImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#flexRoundScoreRules{
+    margin-left: 250px;
+    padding-top: 50px;
+}
+
+#centerPg4Rules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.diceImagesRulesPg{
+    margin-top: 15px;
+}
+
+/* next and previous buttons rules */
+#prev {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+#next {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.rulesBtnExample {
+    display: inline;
+    font-family: "Cute Font", sans-serif;
+    font-weight: 400;
+    color: rgb(79, 29, 67);
+    background-color: rgb(255, 204, 220);
+    font-size: 40px;
+    border: black 1px solid;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+/* some extra styling for go home button beacuse its an a tag */
+#goHomeRules {
+    position: absolute;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#prev:hover, #next:hover, #goHomeRules:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 5px rgba(79, 29, 67, 0.574);
+}
+
+.ruleButtonsStyling {
+    font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 800;
+    font-weight: 600;
     font-style: normal;
-  } */
+    font-size: 24px;
+    color: rgb(120, 85, 171);
+    background-color: rgb(255, 237, 237);
+}
+
+/* no bullet points where they aren't needed */
+.takeAwayListStyle {
+    list-style-type: none;
+}
+
+
+/* actual text of rules */
+#rulesText  {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 25px;
+    line-height: 50px;
+    color: rgb(255, 237, 237);
+    margin-bottom: 50px; 
+} 
+
+/* puts snake eyes and rolling 1 explanation next to each other */
+#flexHarmfulRules {
+    display: flex;
+    line-height: 40px;
+    gap: 40px;
+}
