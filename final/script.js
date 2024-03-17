@@ -137,8 +137,8 @@
             });
     };
 
-    //spacing needs to change when buttons are taken out (which avoids glitching if player spam clicks)
-    function editSpacingDiceAndQuitButtons() {
+        //spacing needs to change when buttons are taken out (which avoids glitching if player spam clicks)
+        function editSpacingDiceAndQuitButtons() {
         //edit margin bottom of dice images so dice are centered
         displayDice.style.marginTop = `45px`;
 
@@ -170,7 +170,6 @@
 
             h1Playing.innerHTML = `SNAKE EYES!`
             gameData.score[gameData.index] = 0;
-            gameData.index ? (gameData.index = 0) : (gameData.index = 1); 
             scorePerRound.innerHTML = 0; //set roundSum scoring back to
 
             gameData.roundSum[gameData.index] = 0; //reset middle num
@@ -193,8 +192,6 @@
 
             gameData.roundSum[gameData.index] = 0; //reset middle num
 
-            gameData.index ? (gameData.index = 0) : (gameData.index = 1); //switch players
-
             setTimeout(switchingPlayers, 1100);
 
         } else {
@@ -204,8 +201,6 @@
             gameData.roundSum[gameData.index] += gameData.rollSum; //calculate roundSum
 
             scorePerRound.innerHTML = `${gameData.roundSum[gameData.index]}`; //show roundsum in middle column
-
-            updatePlayerScore();
 ;
             actionArea.innerHTML = `<button id="rollagain" class="roll">Roll Again!</button><button id="pass" class="roll">Pass</button>`;
 
@@ -233,24 +228,25 @@
                 const currentPlayerScore = gameData.index === 0 ? player1Score : player2Score; //if it's player 1's turn, currentPlayerScore = player1Score, if not, then currentPlayerScore = player2Score
                 currentPlayerScore.innerHTML = gameData.score;
                 [gameData.index]; //update score array & HTML on page
-                gameData.index ? (gameData.index = 0) : (gameData.index = 1); //switch players
 
                 //shrink the round score (0px font size) –> it will be reset to zero on set up turn
                 scorePerRound.classList.add(`shrinkRoundScore`);
 
                 //depending on who's turn it is, add the class that makes the player score expand and contrast
                 if(gameData.index === 0) {
-                    player2Score.classList.add(`playerScoreExpandContrast`);
-                } else {
                     player1Score.classList.add(`playerScoreExpandContrast`);
+                } else {
+                    player2Score.classList.add(`playerScoreExpandContrast`);
                 }
                 updatePlayerScore();
+                checkWinningCondition();
                 setTimeout(switchingPlayers, 1000)
             });
         }
     }
 
     function switchingPlayers() {
+        gameData.index ? (gameData.index = 0) : (gameData.index = 1); //switch players
         //play pig sound
         if(gameData.index === 0) {
             pigSound1.play();
@@ -263,6 +259,12 @@
     }
 
     function updatePlayerScore() {
+            //displays and updates player scores
+            player1Score.innerHTML = `Player 1<br>${gameData.score[0]}`;
+            player2Score.innerHTML = `Player 2<br>${gameData.score[1]}`;
+        }
+
+    function checkWinningCondition() {
         //check winning condition here
         //have pop-up display flex instead of hidden
         if(gameData.score[gameData.index] > gameData.gameEnd) {
@@ -279,12 +281,9 @@
             goHomeBtn.addEventListener(`click`, function(){
                 location.reload();
             });
-        } else {
-            //displays and updates player scores
-            player1Score.innerHTML = `Player 1<br>${gameData.score[0]}`;
-            player2Score.innerHTML = `Player 2<br>${gameData.score[1]}`;
-        }
+        } 
     }
+        
  
 })();
 
